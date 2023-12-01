@@ -1,5 +1,7 @@
 <?php
-include 'connect.php';
+session_start();
+
+include 'connect.php'; // Include the database connection file
 
 if (isset($_POST['login'])) {
     $email = $_POST['email'];
@@ -9,26 +11,30 @@ if (isset($_POST['login'])) {
     $sql = "SELECT * FROM users WHERE email = ?";
 
     // Prepare the statement
-    $stmt = $pdo->prepare($sql);
+    $stmt = $conn->prepare($sql);
 
     // Bind parameters and execute
-    $stmt->execute([$email]);
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+
+    // Get the result
+    $result = $stmt->get_result();
 
     // Fetch the user details
-    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+    $user = $result->fetch_assoc();
 
     // Verify password and user existence
     if ($user && password_verify($password, $user['password'])) {
-        session_start();
         $_SESSION['email'] = $email;
         $_SESSION['success'] = "You are now logged in";
-        header('location: home.php');
+        header('location: home.php'); // Redirect to home page after successful login
         exit();
     } else {
         echo "Wrong email or password";
     }
 }
 ?>
+
 
 
 

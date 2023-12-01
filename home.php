@@ -20,39 +20,39 @@
       <div class="row">
             <div class="col-md-6 mt-md-0 mt-3">
                 <label>Index Number</label>
-                <input type="text" class="form-control" name="indexnumber" required>
+                <input type="text" class="form-control" id="indexNumber" name="indexNumber" required>
             </div>
             <div class="col-md-6 mt-md-0 mt-3">
                 <label>First Name</label>
-                <input type="text" class="form-control" name="firstname" required>
+                <input type="text" class="form-control" id="firstName" name="firstName" required>
             </div>
             <div class="col-md-6 mt-md-0 mt-3">
                 <label>Last Name</label>
-                <input type="text" class="form-control" name="lastname" required>
+                <input type="text" class="form-control" id="lastName" name="lastName" required>
             </div>
             <div class="col-md-6 mt-md-0 mt-3">
                 <label>Other Name</label>
-                <input type="text" class="form-control" name="othername" required>
+                <input type="text" class="form-control" id="otherName" name="otherName" required>
             </div>
             <div class="col-md-6 mt-md-0 mt-3">
                 <label>Date of Admission</label>
-                <input type="date" class="form-control" name="dateofadmission" required>
+                <input type="date" class="form-control" id="dateOfAdmission" name="dateOfAdmission" required>
             </div>
             <div class="col-md-6 mt-md-0 mt-3">
                 <label>Name of Former School</label>
-                <input type="text" class="form-control" name="nameofformerschool" required>
+                <input type="text" class="form-control" id="nameOfFormerSchool" name="nameOfFormerSchool" required>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6 mt-md-0 mt-3">
                 <label>Date of Birth</label>
-                <input type="date" class="form-control" name="dateofbirth" required>
+                <input type="date" class="form-control" id="dateOfBirth" name="dateOfBirth" required>
             </div>
             <div class="col-md-6 mt-md-0 mt-3">
                 <label>Gender</label>
                 <div class="d-flex align-items-center mt-2">
-                    <select class="form-control" name="gender">
-                        opt
+                    <select class="form-control" id="gender" name="gender">
+                        <option value=""></option>
                         <option value="male">male</option>
                         <option value="female">female</option>
                     </select>
@@ -63,32 +63,32 @@
         <div class="row">
             <div class="col-md-6 mt-md-0 mt-3">
                 <label>Religious Denomination</label>
-                <input type="text" class="form-control" name="religiousdenomination" required>
+                <input type="text" class="form-control" id="religiousDenomination" name="religiousDenomination" required>
             </div>
             <div class="col-md-6 mt-md-0 mt-3">
                 <label>Phone Number</label>
-                <input type="tel" class="form-control" name="phonenumber" required>
+                <input type="tel" class="form-control" id="phoneNumber" name="phoneNumber" required>
             </div>
             <div class="col-md-6 mt-md-0 mt-3">
                 <label>Home Town</label>
-                <input type="text" class="form-control" name="hometown" required>
+                <input type="text" class="form-control" id="hometown" name="hometown" required>
             </div>
             <div class="col-md-6 mt-md-0 mt-3">
                 <label>Place of Birth</label>
-                <input type="text" class="form-control" name="placeofbirth" required>
+                <input type="text" class="form-control" id="placeOfBirth" name="placeOfBirth" required>
             </div>
             <div class="col-md-6 mt-md-0 mt-3">
                 <label>District</label>
-                <input type="text" class="form-control" name="district" required>
+                <input type="text" class="form-control" id="district" name="district" required>
             </div>
             <div class="col-md-6 mt-md-0 mt-3">
                 <label>Region</label>
-                <input type="text" class="form-control" name="region" required>
+                <input type="text" class="form-control" id="region" name="region" required>
             </div>
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-dark" onclick="adduser()" >Submit</button>
+        <button type="button" class="btn btn-dark" onclick="addUser()" >Submit</button>
         <button type="button" class="btn btn-danger" data-bs-dismiss="modal" aria-label="Close">Close</button>
       </div>
     </div>
@@ -106,19 +106,19 @@
       <div class="modal-body">
         <div class="form-group"> 
           <label for="updatename">Name</label>
-          <input type="text" class="form-control" id="updatename"  placeholder="Enter your name">
+          <input type="text" class="form-control" id="updateName"  placeholder="Enter your name">
         </div>
         <div class="form-group"> 
           <label for="updateemail">Email</label>
-          <input type="email" class="form-control" id="updateemail"  placeholder="Enter your email">
+          <input type="email" class="form-control" id="updateEmail"  placeholder="Enter your email">
         </div>
         <div class="form-group"> 
           <label for="updatemobile">Mobile</label>
-          <input type="text" class="form-control" id="updatemobile"  placeholder="Enter your mobile number">
+          <input type="text" class="form-control" id="updateMobile"  placeholder="Enter your mobile number">
         </div>
         <div class="form-group"> 
           <label for="updateplace">Place</label>
-          <input type="text" class="form-control" id="updateplace"  placeholder="Enter your place">
+          <input type="text" class="form-control" id="updatePlace"  placeholder="Enter your place">
         </div>
       </div>
       <div class="modal-footer">
@@ -129,14 +129,20 @@
     </div>
   </div>
 </div>
+<div class="container my-3 d-flex justify-content-end">
+        <a href="index.php" class="btn btn-danger my-3 ms-3">Close App</a>
+ </div>
     <div class="container my-3">
          <h1 class="text-center">Ayisec Student Registration Portal</h1>
-            <button type="button" class="btn btn-dark my-3" data-bs-toggle="modal" data-bs-target="#completeModal">
+            <button type="button" class="btn btn-primary my-3" data-bs-toggle="modal" data-bs-target="#completeModal">
               Add New Student
             </button>
-            <div id="displayDataTable"></div>
-      
+            <div id="displayDataTable"></div> 
     </div>
+    
+
+    
+    
  
   <!-- JQuerry ---->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
@@ -144,96 +150,71 @@
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"> </script>
 
    <script>
-    //function to Keep the data when you refresh the screen;
+
+    //Function to Keep Data when you refresh the screen.
     $(document).ready(function(){
-        displayData();
+      displayData;
     });
 
     // Display Function
     function displayData(){
       var displayData = "true";
-
       $.ajax({
         url: "display.php",
         type: 'post',
         data:{
-            displaySend:displayData
+          displaySend: displayData
         },
-        success:function(data,status){
+        success:function(data, status){
           $('#displayDataTable').html(data);
         }
       });
     }
-    // Function to Add users into the database;
-    function adduser(){
-        var nameAdd = $('#completename').val();
-        var emailAdd = $('#completeemail').val();
-        var mobileAdd = $('#completemobile').val();
-        var placeAdd = $('#completeplace').val();
-        $.ajax({
-        url:"insert.php",
-        type: 'post',
-        data:{
-          nameSend:nameAdd,
-          emailSend:emailAdd,
-          mobileSend:mobileAdd,
-          placeSend:placeAdd, 
-        },
-        success: function(data,status){
-         // console.log(status);
-         $('#completeModal').modal('hide');
-         displayData();
-        }
-      });
-    }
-    //Delete record
+     // Function to Add Student Info into the database.
+    function addUser(){
+      var indexNumberAdd =$('#indexNumber').val();
+      var firstNameAdd =$('#firstName').val();
+      var lastNameAdd =$('#lastName').val();
+      var otherNameAdd =$('#otherName').val();
+      var dateOfAdmissionAdd =$('#dateOfAdmission').val();
+      var nameOfFormerSchoolAdd =$('#nameOfFormerSchool').val();
+      var dateOfBirthAdd =$('#dateOfBirth').val();
+      var genderAdd =$('#gender').val();
+      var religiousDenominationAdd =$('#religiousDenomination').val();
+      var phoneNumberAdd =$('#phoneNumber').val();
+      var hometownAdd =$('#hometown').val();
+      var placeOfBirthAdd =$('#placeOfBirth').val();
+      var districtAdd =$('#district').val();
+      var regionAdd =$('#region').val();
 
-    function DeleteUser(deleteid){
       $.ajax({
-        url:"delete.php",
+        url: "insert.php",
         type: 'post',
         data:{
-          deleteSend: deleteid,
+          indexNumberSend: indexNumberAdd,
+          firstNameSend: firstNameAdd,
+          lastNameSend: lastNameAdd,
+          otherNameSend: otherNameAdd,
+          dateOfAdmissionSend: dateOfAdmissionAdd,
+          nameOfFormerSchoolSend: nameOfFormerSchoolAdd,
+          dateOfBirthSend: dateOfBirthAdd,
+          genderSend: genderAdd,
+          religiousDenominationSend: religiousDenominationAdd,
+          phoneNumberSend: phoneNumberAdd,
+          hometownSend: hometownAdd,
+          placeOfBirthSend: placeOfBirthAdd,
+          districtSend: districtAdd,
+          regionSend: regionAdd,
         },
-        success:function(data,status){
-            displayData();
+        success:function(data, status){
+          // console.log(status)
+          $('#completeModal').modal('hide');
+          displayData();
         }
+
       });
     }
-    //Update Function
-    function GetDetails(updateid){
-      $('#hiddendata').val(updateid);
-
-      $.post("update.php",{updateid:updateid},function(data,status){
-        var userid = JSON.parse(data);
-        $('#updatename').val(userid.name);
-        $('#updateemail').val(userid.email);
-        $('#updatemobile').val(userid.mobile);
-        $('#updateplace').val(userid.place);
-      });
-
-      $('#updateModal').modal('show');
-    }
-    // Onclick update event function
-    function updateDetails(){
-      var updatename = $('#updatename').val();
-      var updateemail = $('#updateemail').val();
-      var updatemobile = $('#updatemobile').val();
-      var updateplace = $('#updateplace').val();
-      var hiddendata = $('#hiddendata').val();
-
-      $.post("update.php",{
-        updatename:updatename,
-        updateemail:updateemail,
-        updatemobile: updatemobile,
-        updateplace:updateplace,
-        hiddendata: hiddendata
-      },function(data,status){
-        $('#updateModal').modal('hide');
-        displayData();
-      });
-    }
-
    </script>
+    
   </body>
 </html>
