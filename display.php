@@ -23,28 +23,40 @@
                 <th scope="col">Actions </th>
             </tr>
         </thead>';
-
         $sql = "SELECT * FROM student";
         $result = mysqli_query($conn, $sql);
         $number = 1;
 
         while($row = mysqli_fetch_assoc($result)) {
+            $id = $row['id'];
+            $firstName = $row['firstName'];
+            $lastName = $row['lastName'];
+            $otherName = $row['otherName'];
+            $dateOfAdmission = $row['dateOfAdmission'];
+            $nameOfFormerSchool = $row['nameOfFormerSchool'];
+            $dateOfBirth = $row['dateOfBirth'];
+            $gender = $row['gender'];
+            $religiousDenomination = $row['religiousDenomination'];
+            $phoneNumber = $row['phoneNumber'];
+            $hometown = $row['hometown'];
+            $placeOfBirth = $row['placeOfBirth'];
+            $district = $row['district'];
+            $region = $row['region'];
             $table .= '<tr>
                 <td scope="row">'.$number.'</td>
-                <td>'. $row['IndexNumber'] .' </td>
-                <td>'. $row['firstName'] .' </td>
-                <td>'. $row['lastName'] .' </td>
-                <td>'. $row['otherName'] .' </td>
-                <td>'. $row['dateOfAdmission'] .' </td>
-                <td>'. $row['nameOfFormerSchool'] .' </td>
-                <td>'. $row['dateOfBirth'] .' </td>
-                <td>'. $row['gender'] .' </td>
-                <td>'. $row['religiousDenomination'] .' </td>
-                <td>'. $row['phoneNumber'] .' </td>
-                <td>'. $row['hometown'] .' </td>
-                <td>'. $row['placeOfBirth'] .' </td>
-                <td>'. $row['district'] .' </td>
-                <td>'. $row['region'] .' </td>
+                <td>'. $firstName .' </td>
+                <td>'. $lastName .' </td>
+                <td>'. $otherName.' </td>
+                <td>'. $dateOfAdmission  .' </td>
+                <td>'. $nameOfFormerSchool .' </td>
+                <td>'. $dateOfBirth .' </td>
+                <td>'. $gender .' </td>
+                <td>'. $religiousDenomination .' </td>
+                <td>'. $phoneNumber .' </td>
+                <td>'. $hometown .' </td>
+                <td>'. $placeOfBirth  .' </td>
+                <td>'. $district  .' </td>
+                <td>'. $region  .' </td>
                 <td>
                     <button class="btn btn-dark">Update</button>
                     <button class="btn btn-danger">Delete</button>

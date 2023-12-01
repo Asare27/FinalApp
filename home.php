@@ -163,7 +163,7 @@
         url: "display.php",
         type: 'post',
         data:{
-          displaySend: displayData
+          displaySend:displayData
         },
         success:function(data, status){
           $('#displayDataTable').html(data);

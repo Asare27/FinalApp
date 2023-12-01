@@ -13,7 +13,7 @@ if (
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param(
-        //"sssssssssssss",
+        "sssssssssssss",
         $_POST['indexNumberSend'],
         $_POST['firstNameSend'],
         $_POST['lastNameSend'],
