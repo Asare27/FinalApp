@@ -1,7 +1,7 @@
 
 <?php
 include 'connect.php';
-
+$server_mode = "development";
 if (
     isset($_POST['indexNumberSend']) && isset($_POST['firstNameSend']) && isset($_POST['lastNameSend']) && isset($_POST['otherNameSend'])
     && isset($_POST['dateOfAdmissionSend']) && isset($_POST['nameOfFormerSchoolSend']) && isset($_POST['dateOfBirthSend']) && isset($_POST['genderSend'])
@@ -13,7 +13,7 @@ if (
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param(
-        "sssssssssssss",
+        "ssssssssssssss",
         $_POST['indexNumberSend'],
         $_POST['firstNameSend'],
         $_POST['lastNameSend'],
@@ -32,12 +32,22 @@ if (
 
     // Execute the prepared statement
     if ($stmt->execute()) {
-        echo "Data inserted successfully";
+        $msg = json_encode(
+            [
+                "status"=>"success",
+                "msg"=>"Data inserted successfully"
+            ]
+        );
     } else {
-        echo "Error: " . $conn->error;
+        $msg = json_encode(
+            [
+                "status"=>"error",
+                "msg" => ($server_mode == "development")? $conn->error : "Server error!"
+            ]
+        );
     }
+    print_r($msg);
 
     // Close the statement
     $stmt->close();
 }
-?>
