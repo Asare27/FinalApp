@@ -17,6 +17,7 @@
                 <th scope="col">Contact </th>
                 <th scope="col">Region </th>
                 <th scope="col">Actions </th>
+                <th scope="col">Actions </th>
             </tr>
         </thead>';
         $sql = "SELECT * FROM student";
@@ -48,7 +49,9 @@
                 <td>'. $phoneNumber .' </td>
                 <td>'. $region  .' </td>
                 <td>
-                    <button class="btn btn-dark">Update</button>
+                    <button class="btn btn-dark">Update</button>   
+                </td>
+                <td>
                     <button class="btn btn-danger">Delete</button>
                 </td>
             </tr>';
